@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH -p short --mem 16gb -N 1 -n 8 --out ragoo.%A.log
+#SBATCH -p short --mem 16gb -N 1 -n 8 --out ragoo.log
 
 module unload miniconda2
 module unload perl
