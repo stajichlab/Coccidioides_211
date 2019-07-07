@@ -1,0 +1,94 @@
+[shovill] Hello jstajich
+[shovill] You ran: /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/shovill --R1 raw/SRR1292227_1.fastq.gz --R2 raw/SRR1292227_2.fastq.gz --outdir shovill_211 --minlen 500 --trim --cpus 16 --ram 64
+[shovill] This is shovill 1.0.4
+[shovill] Written by Torsten Seemann
+[shovill] Homepage is https://github.com/tseemann/shovill
+[shovill] Operating system is linux
+[shovill] Perl version is v5.26.2
+[shovill] Machine has 64 CPU cores and 503.72 GB RAM
+[shovill] Using bwa - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/bwa | Version: 0.7.17-r1188
+[shovill] Using flash - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/flash | FLASH v1.2.11
+[shovill] Using java - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/java | openjdk version "11.0.1" 2018-10-16 LTS
+[shovill] Using lighter - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/lighter | Lighter v1.1.2
+[shovill] Using mash - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/mash | 2.1.1
+[shovill] Using megahit - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/megahit | MEGAHIT v1.1.3
+[shovill] Using megahit_toolkit - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/megahit_toolkit | v1.1.3
+[shovill] Using pigz - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/pigz | pigz 2.3.4
+[shovill] Using pilon - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/pilon | Pilon version 1.23 Mon Nov 26 16:04:05 2018 -0500
+[shovill] Using samclip - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/samclip | samclip 0.2
+[shovill] Using samtools - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/samtools | Version: 1.9 (using htslib 1.9)
+[shovill] Using seqtk - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/seqtk | Version: 1.3-r106
+[shovill] Using skesa - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/skesa | SKESA v.2.3.0
+[shovill] Using spades.py - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/spades.py | SPAdes v3.13.1
+[shovill] Using trimmomatic - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/trimmomatic | 0.39
+[shovill] Using velvetg - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/velvetg | Version 1.2.10
+[shovill] Using velveth - /opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/bin/velveth | Version 1.2.10
+[shovill] Checking if spades supports new stitched read library option instead of --s2
+[shovill] Yes, it supports --pe1-m
+[shovill] Using tempdir: /tmp
+[shovill] Changing into folder: /bigdata/stajichlab/shared/projects/Coccidioides/annotations/Coccidioides_immitis_211/assembly/shovill_211
+[shovill] Collecting raw read statistics with 'seqtk'
+[shovill] Running: seqtk fqchk -q3 \/bigdata\/stajichlab\/shared\/projects\/Coccidioides\/annotations\/Coccidioides_immitis_211\/assembly\/raw\/SRR1292227_1\.fastq\.gz >/tmp/qXGCzfIRVq 2>&1 | sed 's/^/[seqtk] /' | tee -a shovill.log
+[shovill] Read stats: min_len = 301
+[shovill] Read stats: avg_len = 301
+[shovill] Read stats: max_len = 301
+[shovill] Read stats: total_bp = 1699112492
+[shovill] Estimating genome size with 'mash'
+[shovill] Running: mash sketch -o /tmp/jtLJ_22kqx/sketch -k 32 -m 3 -r \/bigdata\/stajichlab\/shared\/projects\/Coccidioides\/annotations\/Coccidioides_immitis_211\/assembly\/raw\/SRR1292227_1\.fastq\.gz 2>&1 | sed 's/^/[mash] /' | tee -a shovill.log
+[mash] Estimated genome size: 2.72216e+07
+[mash] Estimated coverage:    25.456
+[mash] Writing to /tmp/jtLJ_22kqx/sketch.msh...
+[shovill] Using genome size 27221600 bp
+[shovill] Estimated sequencing depth: 62 x
+[shovill] No read depth reduction requested or necessary.
+[shovill] Appending -Xmx64g to _JAVA_OPTIONS
+[shovill] Trimming reads
+[shovill] Running: trimmomatic PE -threads 16 -phred33 \/bigdata\/stajichlab\/shared\/projects\/Coccidioides\/annotations\/Coccidioides_immitis_211\/assembly\/raw\/SRR1292227_1\.fastq\.gz \/bigdata\/stajichlab\/shared\/projects\/Coccidioides\/annotations\/Coccidioides_immitis_211\/assembly\/raw\/SRR1292227_2\.fastq\.gz R1.fq.gz /dev/null R2.fq.gz /dev/null ILLUMINACLIP:/bigdata/operations/pkgadmin/opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/db/trimmomatic.fa:1:30:11 LEADING:3 TRAILING:3 MINLEN:30 TOPHRED33 2>&1 | sed 's/^/[trimmomatic] /' | tee -a shovill.log
+[trimmomatic] Picked up _JAVA_OPTIONS:  -Xmx64g
+[trimmomatic] TrimmomaticPE: Started with arguments:
+[trimmomatic]  -threads 16 -phred33 /bigdata/stajichlab/shared/projects/Coccidioides/annotations/Coccidioides_immitis_211/assembly/raw/SRR1292227_1.fastq.gz /bigdata/stajichlab/shared/projects/Coccidioides/annotations/Coccidioides_immitis_211/assembly/raw/SRR1292227_2.fastq.gz R1.fq.gz /dev/null R2.fq.gz /dev/null ILLUMINACLIP:/bigdata/operations/pkgadmin/opt/linux/centos/7.x/x86_64/pkgs/miniconda3/4.3.31/envs/shovill/db/trimmomatic.fa:1:30:11 LEADING:3 TRAILING:3 MINLEN:30 TOPHRED33
+[trimmomatic] Using PrefixPair: 'AGATGTGTATAAGAGACAG' and 'AGATGTGTATAAGAGACAG'
+[trimmomatic] Using PrefixPair: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT' and 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+[trimmomatic] Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+[trimmomatic] Using Long Clipping Sequence: 'TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCTCGTATGCCGTCTTCTGCTTG'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+[trimmomatic] Skipping duplicate Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTA'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAG'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCGGTTCAGCAGGAATGCCGAGACCGATCTCGTATGCCGTCTTCTGCTTG'
+[trimmomatic] Using Long Clipping Sequence: 'TTTTTTTTTTAATGATACGGCGACCACCGAGATCTACAC'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+[trimmomatic] Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+[trimmomatic] Using Long Clipping Sequence: 'TTTTTTTTTTCAAGCAGAAGACGGCATACGA'
+[trimmomatic] Skipping duplicate Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+[trimmomatic] Using Long Clipping Sequence: 'GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT'
+[trimmomatic] Using Long Clipping Sequence: 'TACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+[trimmomatic] Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTCCGAGCCCACGAGAC'
+[trimmomatic] Using Long Clipping Sequence: 'CAAGCAGAAGACGGCATACGAGATCGGTCTCGGCATTCCTGCTGAACCGCTCTTCCGATCT'
+[trimmomatic] Using Long Clipping Sequence: 'CTGTCTCTTATACACATCTGACGCTGCCGACGA'
+[trimmomatic] Using Long Clipping Sequence: 'AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCT'
+[trimmomatic] ILLUMINACLIP: Using 2 prefix pairs, 17 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+[trimmomatic] Input Read Pairs: 2822446 Both Surviving: 2692991 (95.41%) Forward Only Surviving: 128232 (4.54%) Reverse Only Surviving: 207 (0.01%) Dropped: 1016 (0.04%)
+[trimmomatic] TrimmomaticPE: Completed successfully
+[shovill] Average read length looks like 301 bp
+[shovill] Setting k-mer range to (31 .. 127)
+[shovill] Estimated K-mers: 31 55 79 103 127 [kn=5, ks=24, kmin=31, kmax=127]
+[shovill] Using kmers: 31,55,79,103,127
+[shovill] Correcting reads with 'Lighter'
+[shovill] Running: lighter -od . -r R1.fq.gz -r R2.fq.gz -K 32 27221600 -t 16 -maxcor 1 2>&1 | sed 's/^/[lighter] /' | tee -a shovill.log
+[lighter] [2019-07-07 13:50:00] =============Start====================
+[lighter] [2019-07-07 13:50:00] Scanning the input files to infer alpha(sampling rate)
+[lighter] [2019-07-07 13:50:39] Average coverage is 59.505 and alpha is 0.118
+[lighter] [2019-07-07 13:50:46] Bad quality threshold is ")"
+[lighter] [2019-07-07 13:51:34] Finish sampling kmers
+[lighter] [2019-07-07 13:51:34] Bloom filter A's false positive rate: 0.033398
+[lighter] [2019-07-07 13:52:44] Finish storing trusted kmers
+[lighter] [2019-07-07 13:55:33] Finish error correction
+[lighter] Processed 5385982 reads:
+[lighter] 	2685755 are error-free
+[lighter] 	Corrected 4575805 bases(1.694600 corrections for reads with errors)
+[lighter] 	Trimmed 0 reads with average trimmed bases 0.000000
+[lighter] 	Discard 0 reads
+[shovill] Overlapping/stitcing PE reads with 'FLASH'
+[shovill] Running: flash -m 20 -M 301 -d . -o flash -z -t 16 R1.cor.fq.gz R2.cor.fq.gz 2>&1 | sed 's/^//' | tee -a shovill.log
