@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH -p batch -N 1 -n 16 --mem 64gb --out logs/shovill.%A.log --time 2-0:00:00
+#SBATCH -p batch -N 1 -n 16 --mem 64gb --out logs/shovill.log --time 2-0:00:00
 
 MEM=64
 

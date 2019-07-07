@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-#SBATCH --ntasks 16 --mem 64gb --out logs/aaftf.%A.log -p batch
+#SBATCH --ntasks 16 --mem 64gb --out logs/aaftf.log -p batch
 
 module load AAFTF
 
