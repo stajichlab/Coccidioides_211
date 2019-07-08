@@ -17,3 +17,5 @@ ragoo.py -t 8 -C $IN FungiDB-38_CimmitisRS_Genome.fasta
 cp ragoo_output/ragoo.fasta $FINAL
 AAFTF sort -i $FINAL -o $FINALSORTED
 AAFTF assess -i $FINALSORTED -r 211.ragoo.stats.txt
+
+cp $FINALSORTED ../annotation
