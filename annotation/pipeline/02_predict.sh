@@ -15,6 +15,14 @@ module load funannotate/git-live
 module list
 which perl
 
+for gzfile in Cocci_repeats.nr.gz Cocci.Transcripts.gz informant.aa.gz
+do
+	b=$(basename $gzfile .gz)
+	if [ ! -e $b ]; then
+		pigz --keep $gzfile
+	fi
+done
+
 export AUGUSTUS_CONFIG_PATH=$(realpath augustus/config)
 CPUS=$SLURM_CPUS_ON_NODE
 
@@ -37,7 +45,13 @@ if [ ! $BUSCO ]; then
  echo "NEED TO PROVIDE A BUSCO FOLDER NAME eg. ascomycota_odb9 fungi_odb9 dikarya_odb9 etc"
  exit
 elif [ ! -e $BUSCO ]; then
-  ln -s /opt/linux/centos/7.x/x86_64/pkgs/funannotate/share/$BUSCO .
+  if [ ! -z $FUNANNOTATE_DB ]; then
+	  ln -s $FUNANNOTATE_DB/$BUSCO .
+  else
+#this is specific to our system would need to symlink to the busco file to avoid this issue
+  	ln -s /opt/linux/centos/7.x/x86_64/pkgs/funannotate/share/$BUSCO .
+ fi
+
 fi
 
 #if [ ! -f uniprot_sprot.fasta ]; then
@@ -47,7 +61,7 @@ if [ ! $PROTEINS ]; then
  PROTEINS=uniprot_sprot.fasta
 fi
 
-if [ ! "$EXTRA" ]; then
+if [ -z $EXTRA ]; then
  EXTRA="--ploidy 1"
 fi
 if [ ! $ODIR ]; then

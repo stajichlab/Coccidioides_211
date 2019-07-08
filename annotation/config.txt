@@ -1,0 +1,22 @@
+SORTED=211.ragoo.sorted.fasta
+MASKED=211.ragoo.masked.fasta
+MIN=500  #MINIMUM SIZE CONTIG
+PREFIX=DIZ76_
+ODIR=funannotate
+BUSCO=pezizomycotina_odb9
+SPECIES="Coccidioides immitis" # GENUS SPECIES
+RMLIB=Cocci_repeats.nr #RepeatModeler library (or use 
+ISOLATE="211"  # STRAIN/ISOLATE INFO
+GENEMARK=Coccidioides_211.gmes.mod
+AUGUSTUSOPTS="--optimize_augustus"
+RNASEQ=RNASeq_fwd.fq
+#--optimize_augustus
+#--augustus_species # EITHER A PRETRAINED AUGUSTUS SPECIES NAME
+# OR PROVIDE --optimize_augustus IN THIS SPACE
+TRANSCRIPTS=Cocci.Transcripts
+PROTEINS=informant.aa
+TEMPLATE=template_Cimm_211_js.sbt # TEMPLATE FOR INITIAL ASSIGNMENT IN tbl2asn
+EXTRA="--numbering 10000 --ploidy 1 --SeqCenter TGEN"
+#--genemark_gtf genemark.gtf"
+EMAIL=jason.stajich@gmail.com
+EXTRAANNOT="--antismash antismash/scaffold_1.final.gbk"
