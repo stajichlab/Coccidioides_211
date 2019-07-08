@@ -1,0 +1,11 @@
+Assembly statistics for: 211.ragoo.sorted.fasta
+   CONTIG COUNT  =  63
+   TOTAL LENGTH  =  27475270
+            MIN  =  516
+            MAX  =  8141392
+         MEDIAN  =  655
+           MEAN  =  436115.40
+            L50  =  3
+            N50  =  3770209
+            L90  =  6
+            N90  =  3254660

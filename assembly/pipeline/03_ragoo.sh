@@ -5,16 +5,19 @@ module unload miniconda2
 module unload perl
 module unload python
 module load miniconda3
-module load AAFTF
 
-source activate shovill
 IN=211.sorted.fasta
 FINAL=211.ragoo.fasta
 FINALSORTED=211.ragoo.sorted.fasta
 
-ragoo.py -t 8 -C $IN FungiDB-38_CimmitisRS_Genome.fasta
-
-cp ragoo_output/ragoo.fasta $FINAL
+if [ ! -f $FINAL ]; then
+	source activate shovill
+	ragoo.py -t 8 -C $IN FungiDB-38_CimmitisRS_Genome.fasta
+	cp ragoo_output/ragoo.fasta $FINAL
+	conda deactivate
+fi
+module load python/3
+module load AAFTF/git-live
 AAFTF sort -i $FINAL -o $FINALSORTED
 AAFTF assess -i $FINALSORTED -r 211.ragoo.stats.txt
 
