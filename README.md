@@ -38,3 +38,7 @@ pipeline/03_annotfunc.sh - run again to incorporate AntiSMASH results and IPRSca
 ```
 
 The genome assembly with annotation presented in this work is available under accession [RHJW00000000.2](https://www.ncbi.nlm.nih.gov/nuccore/RHJW00000000.2/)
+
+AUTHORS
+=======
+Assembly and Annotation Steps written by [Jason Stajich](http://lab.stajich.org) and supported by data and analysis in collaboration with Marcus M Teixeira and [Bridget Barker](https://www.valley-fever.com/)
