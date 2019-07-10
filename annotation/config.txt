@@ -16,7 +16,13 @@ RNASEQ=RNASeq_fwd.fq
 TRANSCRIPTS=Cocci.Transcripts
 PROTEINS=informant.aa
 TEMPLATE=template_Cimm_211_js.sbt # TEMPLATE FOR INITIAL ASSIGNMENT IN tbl2asn
-EXTRA="--numbering 10000 --ploidy 1 --SeqCenter TGEN"
+# start at 10000 here because we already deposited an annotation for this strain for an earlier assembly and 
+# could not reuse numbers for this new annotation.
+# no need to do this for other genomes
+EXTRA="--numbering 10000 --ploidy 1 --SeqCenter TGEN" 
 #--genemark_gtf genemark.gtf"
 EMAIL=jason.stajich@gmail.com
+# this only works when we have already run AntiSMASH so I often comment this out on an initial 'annotate' run while
+# waiting. This can also be skipped if "funannotate remote" is run which will unpack the antismash results in 
+# funannotate folders and be picked up automatically
 EXTRAANNOT="--antismash antismash/scaffold_1.final.gbk"
