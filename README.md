@@ -25,7 +25,8 @@ These scripts provide the steps to annotate the genome and depend on
 * [PASA](https://pasapipeline.github.io/) and [Trinity](http://trinityrnaseq.github.io/) to assemnbly and annoate 
 * [Interproscan](https://github.com/ebi-pf-team/interproscan/wiki/HowToRun)
 * [AntiSMaSH](https://fungismash.secondarymetabolites.org/) - which you can run remotely without installing or run locally
-```cd annotation
+```
+cd annotation
 pipeline/00_download.sh - download the RNAseq from NCBI
 pipeline/00_mask.sh - mask genome with existing repeat library for Cocci
 pipeline/01_train.sh - run RNASeq alignment, Trinity to generate transcripts, and further call exons and train gene predictor Augustus
