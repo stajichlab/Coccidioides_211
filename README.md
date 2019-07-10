@@ -37,4 +37,4 @@ pipeline/04b_iprscan.sh - run InterproScan
 pipeline/03_annotfunc.sh - run again to incorporate AntiSMASH results and IPRScan - may need to edit config.txt to add back in expected antismash file
 ```
 
-The genome assembly with annotation presented in this work is available under accession [RHJW00000000.2] (https://www.ncbi.nlm.nih.gov/nuccore/RHJW00000000.2/)
+The genome assembly with annotation presented in this work is available under accession [RHJW00000000.2](https://www.ncbi.nlm.nih.gov/nuccore/RHJW00000000.2/)
