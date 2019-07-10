@@ -1,5 +1,3 @@
->Novel
-Peptide
 >g1825.t1
 EGLKPTIFVVNNAGYSIER
 >g1825.t1
